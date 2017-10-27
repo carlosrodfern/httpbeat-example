@@ -5,7 +5,7 @@ Related issues:
 
 https://github.com/christiangalsterer/httpbeat/issues/25 and https://github.com/elastic/kibana/issues/1084
 
-
+The main change is replacing the `nested` fields in `httpbeat.template.json` to `object`
 
 
 First, configure your endpoints in the httpbeat.yml
