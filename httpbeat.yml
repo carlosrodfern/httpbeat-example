@@ -1,0 +1,26 @@
+######################## Httpbeat Configuration Example ########################
+
+############################## Httpbeat ########################################
+httpbeat:
+  hosts:
+
+    - url: http://host1/ops
+      method: get
+      headers:
+        Accept: application/json
+      output_format: json
+      json_dot_mode: replace
+
+    - url: http://host2/ops
+      method: get
+      headers:
+        Accept: application/json
+      output_format: json
+      json_dot_mode: replace
+output.elasticsearch:
+  enabled: true
+  hosts: ["elasticsearch1:9200", "elasticsearch2:9200"]
+  index: "httbeat-%{+yyyy.MM.dd}"
+  template.enabled: true
+  template.path: "${path.config}/httpbeat.template.json"
+  template.versions.2x.enabled: false
