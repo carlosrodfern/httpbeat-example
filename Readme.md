@@ -27,16 +27,14 @@ $ sudo docker run myttppuller
 If you are planning to use `httpbeat` to pull metrics, you may want to add the following to the `dynamic_templates` array inside `httpbeat.template.json` to tell elasticsearch to use `double` for all number fields instead of trying to dynamically assign the type `long` to fields that come as `0`s for the first time.
 
 ```json
-...
-          {
-            "long_as_double": {
-              "mapping": {
-                "type": "double"
-              },
-              "match_mapping_type": "long"
-            }
-          }
-...
+{
+  "long_as_double": {
+    "mapping": {
+      "type": "double"
+    },
+    "match_mapping_type": "long"
+  }
+}
 ```
 
 
