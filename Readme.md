@@ -20,7 +20,7 @@ $ sudo docker build -t myhttppuller .
 Finally, run it.
 
 ```sh
-$ sudo docker run myttppuller
+$ sudo docker run myhttppuller
 ```
 
 
